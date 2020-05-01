@@ -1,0 +1,1 @@
+# puppet_hiera_example
