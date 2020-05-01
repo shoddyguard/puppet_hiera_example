@@ -1,5 +1,6 @@
 ---
 # BOOTSTRAP hiera config when building a puppetmaster from scratch
+# Very limited lookup paths just to get us going, then once Puppet agent takes over we'll use our proper hiera.
 version: 5
 
 defaults:

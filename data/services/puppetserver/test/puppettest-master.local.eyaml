@@ -1,0 +1,4 @@
+---
+puppet::dns_alt_names:
+    - "%{::hostname}.local"
+example_puppetserver::puppet_environment: 'puppet6_test'
