@@ -1,0 +1,15 @@
+---
+# This will get a Puppet server bootstrapped when using the puppetmaster.sh script in Puppet provisioning.
+# This should be pretty generic - enough to get Puppet going, the key things to change here are the puppet version and puppet environment.
+# On the production branch these should be set to the stable things.
+classes: 
+  - bs_puppetserver
+bs_puppetserver::puppet_majorversion: 6
+# I think it ends up calling part of the Foreman Puppet module: https://github.com/theforeman/puppet-puppet/blob/46c40319775e2293a9e92556fe68755fa348f92d/manifests/config.pp
+# If so I wonder if we need to specify these in the bootstrap or only after the agent takes over? Let's test and see?
+#puppet::dns_alt_names:
+#  - "%{::hostname}"
+#  - "%{::hostname}.brownserve.co.uk"
+bs_puppetserver::puppet_environment: 'puppet6_test'
+
+common::manage_puppet: false #let the ::puppet class deal with the puppet-agent package
