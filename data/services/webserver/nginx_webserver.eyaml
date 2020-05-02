@@ -1,0 +1,3 @@
+# this file would get applied to any node that has it's pp_service set to webserver and it's pp_role set to nginx_webserver
+---
+example_webserver::provider: 'nginx'

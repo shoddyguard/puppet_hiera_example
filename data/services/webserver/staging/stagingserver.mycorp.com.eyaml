@@ -1,0 +1,7 @@
+# This would ONLY get applied to the node stagingserver.mycorp.com
+---
+example_webserver::cdn: 'staging-cdn.mycorp.com'
+example_webserver::bind_address: '10.0.0.4'
+example_webserver::hostnames:
+    - "testsite.mycorp.com"
+    - "intranet-test.mycorp.com"

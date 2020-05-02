@@ -10,8 +10,9 @@ hierarchy:
 
     - name: "Per-node secrets (eyaml)"
       lookup_key: eyaml_lookup_key # eyaml backend
+      # The location of your puppet masters eyaml keys
       options:
-          pkcs7_private_key: /etc/puppetlabs/puppet/keys/private_key.pkcs7.pem
+          pkcs7_private_key: /etc/puppetlabs/puppet/keys/private_key.pkcs7.pem 
           pkcs7_public_key:  /etc/puppetlabs/puppet/keys/public_key.pkcs7.pem
       paths:
           - "data/%{trusted.certname}.eyaml"
@@ -27,7 +28,7 @@ hierarchy:
 
     - name: "Common data (yaml version)"
       paths:
-          - "data/common.yaml"
+          - "data/common.yaml" # Anything in data/common.yaml would get applied to ALL nodes. I've never found a particulaly compelling use for this.
 
     - name: "Common secrets (eyaml)"
       lookup_key: eyaml_lookup_key
@@ -35,4 +36,4 @@ hierarchy:
           pkcs7_private_key: /etc/puppetlabs/puppet/keys/private_key.pkcs7.pem
           pkcs7_public_key:  /etc/puppetlabs/puppet/keys/public_key.pkcs7.pem
       paths:
-          - "data/common.eyaml"
+          - "data/common.eyaml" # Same as above, except being eyaml it accepts encrypted data. If you have an admin user you want to be present on all nodes you could declare that here for example.

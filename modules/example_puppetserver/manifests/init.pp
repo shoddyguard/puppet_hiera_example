@@ -61,7 +61,7 @@ class example_puppetserver
   }
   else
   {
-    fail("Unsupported Puppet version: ${puppet_majorversion}. If you are upgrading, follow the instructions in the repo.")
+    fail("Unsupported Puppet version: ${puppet_majorversion}.")
   }
 
   # Install and configure PuppetDB

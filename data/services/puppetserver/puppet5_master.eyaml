@@ -1,0 +1,2 @@
+---
+example_puppetserver::puppet_majorversion: 5
