@@ -16,6 +16,8 @@ class example_puppetserver
   $puppet_dbserver = $::fqdn,
 )
 {
+  include example_puppetserver::codemanagement
+  include example_puppetserver::firewall
 
   group { $puppet_group:
     ensure => present,
@@ -43,22 +45,6 @@ class example_puppetserver
     $hiera_hierarchies = []
     $eyaml_version = '3.2.0'
   }
-  elsif $puppet_majorversion == 5
-  {
-    $postgres_version = '9.0'
-    $puppetserver_version = '5.5.0'
-    $puppetserver_package_version = "5.5.0-1${::lsbdistcodename}"
-    $puppetdb_package_version = "5.5.1-1${::lsbdistcodename}"
-    # Do not let puppet upgrade to the latest version of puppet-agent.
-    # That's because for major upgrades, we are supposed to upgrade puppetserver
-    # before puppet-agent.
-    $puppet_agent_package_version = "5.5.0-1${::lsbdistcodename}"
-    $hiera_version = '5'
-    # with hiera v5, hierarchies should be defined in the environment and module layers
-    # hiera.yaml files which are committed with our puppet source code.
-    $hiera_hierarchies = []
-    $eyaml_version = '3.2.0'
-  }
   else
   {
     fail("Unsupported Puppet version: ${puppet_majorversion}.")
@@ -73,7 +59,7 @@ class example_puppetserver
     node_ttl         => '14d',
     node_purge_ttl   => '30d',
     report_ttl       => '5d',
-    # we CANNOT disable ssl as it is needed in puppetdb.conf (server_urls)
+    # do not disable ssl as it is needed in puppetdb.conf (server_urls)
     disable_ssl      => false,
     # less ram plz
     java_args        => {

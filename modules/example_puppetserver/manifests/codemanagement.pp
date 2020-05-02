@@ -6,7 +6,7 @@ class example_puppetserver::codemanagement
   $r10k_version = 'present'
 )
 {
-    # r10k commands need to be executed as root.
+  # r10k commands need to be executed as root.
   # So we are going to setup root so that it can pull from our github repos
   $username ='root'
   $home_folder = '/root'
@@ -33,9 +33,7 @@ class example_puppetserver::codemanagement
 
   cron { 'r10k deploy environment --puppetfile':
     ensure  => present,
-    # We have seen instances of r10k hanging forever and using 100% CPU, so let's kill
-    # any r10k process before each deployment.
-    # Sadly, this will also kill r10k processes started by users...
+    # r10k can hang especially if it's already running, this kills it on the off-change it's already running. (side-effect is that it will kill any user initiated runs)
     command => '/usr/bin/pkill --echo --signal 9 r10k; /usr/local/bin/r10k deploy environment --puppetfile 2>&1 | logger -t "r10k_deploy_environment"',
     user    => $username,
     minute  => '*/15',

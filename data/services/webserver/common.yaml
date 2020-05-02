@@ -1,6 +1,0 @@
-# this file would apply to anything which has it's pp_service set to "webserver"
----
-classes:
-    - example_webserver # We're telling everything that's got webserver set as it's <pp_service> that it should include the `example_webserver` class
-
-example_webserver::php_version: 5.5 # This set's the php_version parameter on the example_webserver class to 5.5 on all these nodes too.
