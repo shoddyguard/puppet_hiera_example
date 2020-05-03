@@ -1,7 +1,7 @@
 ---
-# This will get a Puppet server bootstrapped when using the puppetmaster.sh script in Puppet provisioning.
+# This will get a Puppet server bootstrapped when using the puppetmaster.sh script in Puppet-Provisioning.
 # This should be pretty generic - enough to get Puppet going, the key things to change here are the puppet version and puppet environment.
-# On the production branch these should be set to the stable things.
+# On the production branch these should be set to the stable things for bootstrapping a new Puppet server in a pinch, for a testing branch these can be set to whatever you want.
 classes: 
   - example_puppetserver
 example_puppetserver::puppet_majorversion: 6
