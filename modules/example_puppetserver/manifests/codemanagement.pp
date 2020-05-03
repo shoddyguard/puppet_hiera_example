@@ -28,7 +28,7 @@ class example_puppetserver::codemanagement
       ensure => 'directory',
     }
   -> file { '/etc/puppetlabs/r10k/r10k.yaml':
-      content => template('bs_puppetserver/r10k.yaml.erb'),
+      content => template('example_puppetserver/r10k.yaml.erb'),
     }
 
   cron { 'r10k deploy environment --puppetfile':
