@@ -9,7 +9,8 @@ I'd suggest making any production repositories private, but if you're just testi
 
 If you're setting up a brand new environment or haven't used hiera-eyaml before then you'll want to generate a set of keys and save these for later.
 To do this you'll need to install the Ruby gem:  
-`gem install hiera-eyaml` and then create your keypair with `eyaml createkeys`
+`gem install hiera-eyaml` and then create your keypair with `eyaml createkeys` you'll want to copy `private_key.pkcs7.pem` and `public_key.pkcs7.pem` for use later on.
+I highly recommend keeping a copy of `private_key.pkcs7.pem` somewhere safe so if you ever loose it then you can still decrypt all your secrets.
 
 Once you've got your new repo edit the `modules\example_puppetserver\templates\r10k.yaml.erb` file to point to the ssh address of your shiny new git repo.  
 You'll probably also want to grab a copy of the r10k yaml for use in the provisioning script later on.
