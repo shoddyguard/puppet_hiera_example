@@ -5,5 +5,5 @@
 classes: 
   - example_puppetserver
 example_puppetserver::puppet_majorversion: 6
-example_puppetserver::puppet_environment: 'puppet6_test'
+example_puppetserver::puppet_environment: 'puppet6'
 
