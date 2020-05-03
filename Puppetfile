@@ -23,6 +23,7 @@ mod 'puppet-epel', '3.0.1'
 
 # Puppet master
 mod 'puppetlabs-puppetdb', '7.4.0'
+mod 'camptocamp-systemd', '2.9.0' # dependency of foreman-puppet
 mod 'theforeman-puppet', '13.0.0'
 mod 'puppet-hiera', '4.0.0'
 mod 'puppetlabs-puppetserver_gem', '1.1.1' # dep of puppet-hiera
