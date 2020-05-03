@@ -19,6 +19,7 @@ class example_puppetserver
   include example_puppetserver::codemanagement
   include example_puppetserver::firewall
   include example_puppetserver::ntpclient
+  include example_puppetserver::puppetboard
 
   group { $puppet_group:
     ensure => present,
