@@ -8,6 +8,7 @@ mod 'puppetlabs-concat', '6.1.0'
 mod 'puppetlabs-vcsrepo', '3.0.0'
 mod 'puppetlabs-docker', '3.9.1'
 mod 'puppetlabs-ntp', '8.3.0'
+mod 'puppetlabs-apt', '7.4.1'
 mod 'puppetlabs-inifile', '4.1.0' # might need to drop this for puppetdb
 mod 'puppetlabs-postgresql', '6.4.0'
 mod 'puppetlabs-firewall', '2.3.0'
