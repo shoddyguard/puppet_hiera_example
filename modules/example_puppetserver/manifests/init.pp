@@ -39,7 +39,7 @@ class example_puppetserver
     # Do not let puppet upgrade to the latest version of puppet-agent.
     # That's because for major upgrades, we are supposed to upgrade puppetserver
     # before puppet-agent.
-    $puppet_agent_package_version = "6.13.0-1${::lsbdistcodename}" # skipping version 14 as it causes issues, waiting for 6.15
+    $puppet_agent_package_version = "6.15.0-1${::lsbdistcodename}" # skipping version 14 as it causes issues, waiting for 6.15
     $hiera_version = '5'
     # with hiera v5, hierarchies should be defined in the environment and module layers
     # hiera.yaml files which are committed with our puppet source code.
