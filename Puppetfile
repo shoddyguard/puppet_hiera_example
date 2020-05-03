@@ -8,6 +8,7 @@ mod 'puppetlabs-concat', '6.1.0'
 mod 'puppetlabs-vcsrepo', '3.0.0'
 mod 'puppetlabs-docker', '3.9.1'
 mod 'puppetlabs-ntp', '8.3.0'
+mod 'puppetlabs-apt', '7.4.1'
 mod 'puppetlabs-inifile', '4.1.0' # might need to drop this for puppetdb
 mod 'puppetlabs-postgresql', '6.4.0'
 mod 'puppetlabs-firewall', '2.3.0'
@@ -22,6 +23,7 @@ mod 'puppet-epel', '3.0.1'
 
 # Puppet master
 mod 'puppetlabs-puppetdb', '7.4.0'
+mod 'camptocamp-systemd', '2.9.0' # dependency of foreman-puppet
 mod 'theforeman-puppet', '13.0.0'
 mod 'puppet-hiera', '4.0.0'
 mod 'puppetlabs-puppetserver_gem', '1.1.1' # dep of puppet-hiera
