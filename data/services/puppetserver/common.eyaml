@@ -13,4 +13,4 @@ lookup_options:
 puppet::dns_alt_names:
     - "%{::hostname}"
 example_puppetserver::puppetboard::puppetboard_dir: "/srv/puppetboard-docker"
-example_puppetserver::puppetboard::: 'v2.1.2'
+example_puppetserver::puppetboard::puppetboard_version: 'v2.1.2'
